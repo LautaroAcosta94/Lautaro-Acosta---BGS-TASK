@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 2ddb20197187a9542a502725c64fb456
+  - enabled: 1
+    path: Assets/Scenes/Mi Argentina v2.unity
+    guid: 43b2fd5d3dabe7249ad646d8e8a5ae2b
+  - enabled: 1
+    path: Assets/Scenes/GanasteMiArgentina.unity
+    guid: a6c81d1585f28f44d96c46db2f2f45a6
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
+      type: 2}
