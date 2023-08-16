@@ -143,7 +143,7 @@ public class RaycastObjetosUsables : MonoBehaviour
 
     void Update()
     {
-        n = inventoryPlayer.GetComponent<ToolbeltV2>().n;
+        n = inventoryPlayer.GetComponent<ToolbeltV2>().numeroDeCasillaActiva;
         eliminarObjeto = inventoryPlayer.GetComponent<ToolbeltV2>().objetosEnInventario[n];
         casillas = inventoryPlayer.GetComponent<ToolbeltV2>().canvasCasillas[n];
 
@@ -259,14 +259,14 @@ public class RaycastObjetosUsables : MonoBehaviour
             if(hit.transform.CompareTag("ArmarioDosCajonConLlave"))
             {
                 textoInteractuar.SetActive(true);
-                if(inventoryPlayer.GetComponent<ToolbeltV2>().llaveCajonColocada == false)
+                /*if(inventoryPlayer.GetComponent<ToolbeltV2>().llaveCajonColocada == false)
                 {
                     if(Input.GetKeyDown(KeyCode.E))
                     {
                         textoCajon.SetActive(true);
                         audioDuda.Play();
                     }
-                }
+                }*/
             }
 
             //PUERTA ARMARIO CON LLAVE CERRADO
@@ -274,14 +274,14 @@ public class RaycastObjetosUsables : MonoBehaviour
             if(hit.transform.CompareTag("PuertaSupMedio"))
             {
                 textoInteractuar.SetActive(true);
-                if(inventoryPlayer.GetComponent<ToolbeltV2>().llavePuertaColocada == false)
+                /*if(inventoryPlayer.GetComponent<ToolbeltV2>().llavePuertaColocada == false)
                 {
                     if(Input.GetKeyDown(KeyCode.E))
                     {
                         textoPuertaArmario.SetActive(true);
                         audioDuda.Play();
                     }
-                }
+                }*/
             }
 
             //PUERTA DE ENTRADA CERRADA
@@ -301,14 +301,14 @@ public class RaycastObjetosUsables : MonoBehaviour
             if(hit.transform.CompareTag("PuertaDormitorio"))
             {
                 textoInteractuar.SetActive(true);
-                if(inventoryPlayer.GetComponent<ToolbeltV2>().llaveColocada == false)
+                /*if(inventoryPlayer.GetComponent<ToolbeltV2>().llaveColocada == false)
                 {
                     if(Input.GetKeyDown(KeyCode.E))
                     {
                         textoPuertaDormitorio.SetActive(true);
                         audioPuertaCerrada.Play();                       
                     }
-                }
+                }*/
             }
 
             //PUERTA SALIDA CERRADA
