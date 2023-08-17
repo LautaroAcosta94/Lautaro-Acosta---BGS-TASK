@@ -45,12 +45,12 @@ public class ToolbeltV2 : MonoBehaviour
     {
         ItemCollector();
         ItemSelector();
+        CasillasCanvas();
         DropItem();
     }
 
     void ItemCollector()
     {
-
         RaycastHit hit;
 
         if(usedSlots <= maxSlots)
@@ -68,8 +68,7 @@ public class ToolbeltV2 : MonoBehaviour
                             objetosEnInventario[0] = hit.transform.gameObject;
                             objetosEnInventario[0].GetComponent<Rigidbody>().isKinematic = true; 
                             objetosEnInventario[0].GetComponent<canvasObjeto>().objetoEnCasillaUno = true;                            
-                            invActivated = true;
-                            
+                            invActivated = true;                       
                         }
                         else
                         {
@@ -80,8 +79,7 @@ public class ToolbeltV2 : MonoBehaviour
                                 objetosEnInventario[1] = hit.transform.gameObject;
                                 objetosEnInventario[1].GetComponent<Rigidbody>().isKinematic = true;
                                 objetosEnInventario[1].GetComponent<canvasObjeto>().objetoEnCasillaDos = true;                            
-                                invActivated = true;
-                                
+                                invActivated = true;                               
                             }
                             else
                             {
@@ -113,9 +111,7 @@ public class ToolbeltV2 : MonoBehaviour
                 }
             }
         }
-
     }
-
     void DropItem()
     {
         if(Input.GetKeyDown(KeyCode.Q))
@@ -155,11 +151,7 @@ public class ToolbeltV2 : MonoBehaviour
                 }
             }
         }
-
     }
-
-   
-
     void ItemSelector()
     {
         //FUNCIONAMIENTO MOUSE SCROLL
@@ -190,22 +182,18 @@ public class ToolbeltV2 : MonoBehaviour
             numeroDeCasillaActiva=0;
             if(objetosEnInventario[0] != null)
             {
-                //objetosEnInventario[0].SetActive(true);
                 objetosEnInventario[0].GetComponent<MeshRenderer>().enabled = true;
             }
             if(objetosEnInventario[1] != null)
             {
-                //objetosEnInventario[1].SetActive(false);
                 objetosEnInventario[1].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[2] != null)
             {
-                //objetosEnInventario[2].SetActive(false);
                 objetosEnInventario[2].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[3] != null)
             {
-                //objetosEnInventario[3].SetActive(false);
                 objetosEnInventario[3].GetComponent<MeshRenderer>().enabled = false;
             }
         }
@@ -215,22 +203,18 @@ public class ToolbeltV2 : MonoBehaviour
             numeroDeCasillaActiva=1;
             if(objetosEnInventario[0] != null)
             {
-                //objetosEnInventario[0].SetActive(true);
                 objetosEnInventario[0].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[1] != null)
             {
-                //objetosEnInventario[1].SetActive(false);
                 objetosEnInventario[1].GetComponent<MeshRenderer>().enabled = true;
             }
             if(objetosEnInventario[2] != null)
             {
-                //objetosEnInventario[2].SetActive(false);
                 objetosEnInventario[2].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[3] != null)
             {
-                //objetosEnInventario[3].SetActive(false);
                 objetosEnInventario[3].GetComponent<MeshRenderer>().enabled = false;
             }
         }
@@ -240,22 +224,18 @@ public class ToolbeltV2 : MonoBehaviour
             numeroDeCasillaActiva=2;
             if(objetosEnInventario[0] != null)
             {
-                //objetosEnInventario[0].SetActive(true);
                 objetosEnInventario[0].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[1] != null)
             {
-                //objetosEnInventario[1].SetActive(false);
                 objetosEnInventario[1].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[2] != null)
             {
-                //objetosEnInventario[2].SetActive(false);
                 objetosEnInventario[2].GetComponent<MeshRenderer>().enabled = true;
             }
             if(objetosEnInventario[3] != null)
             {
-                //objetosEnInventario[3].SetActive(false);
                 objetosEnInventario[3].GetComponent<MeshRenderer>().enabled = false;
             }
         }
@@ -265,25 +245,92 @@ public class ToolbeltV2 : MonoBehaviour
             numeroDeCasillaActiva=3;
             if(objetosEnInventario[0] != null)
             {
-                //objetosEnInventario[0].SetActive(true);
                 objetosEnInventario[0].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[1] != null)
             {
-                //objetosEnInventario[1].SetActive(false);
                 objetosEnInventario[1].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[2] != null)
             {
-                //objetosEnInventario[2].SetActive(false);
                 objetosEnInventario[2].GetComponent<MeshRenderer>().enabled = false;
             }
             if(objetosEnInventario[3] != null)
             {
-                //objetosEnInventario[3].SetActive(false);
                 objetosEnInventario[3].GetComponent<MeshRenderer>().enabled = true;
             }
         }
     }
 
+    void CasillasCanvas()
+    {
+        if(objetosEnInventario[numeroDeCasillaActiva] != null)
+        {
+            if(casillaActiva == 1)
+            {
+                canvasCasillaSeleccionada[0].SetActive(true);
+                canvasCasillaSeleccionada[1].SetActive(false);
+                canvasCasillaSeleccionada[2].SetActive(false);
+                canvasCasillaSeleccionada[3].SetActive(false);
+            }
+
+            if(casillaActiva == 2)
+            {
+                canvasCasillaSeleccionada[0].SetActive(false);
+                canvasCasillaSeleccionada[1].SetActive(true);
+                canvasCasillaSeleccionada[2].SetActive(false);
+                canvasCasillaSeleccionada[3].SetActive(false);
+            }
+
+            if(casillaActiva == 3)
+            {
+                canvasCasillaSeleccionada[0].SetActive(false);
+                canvasCasillaSeleccionada[1].SetActive(false);
+                canvasCasillaSeleccionada[2].SetActive(true);
+                canvasCasillaSeleccionada[3].SetActive(false);
+            }
+
+            if(casillaActiva == 4)
+            {
+                canvasCasillaSeleccionada[0].SetActive(false);
+                canvasCasillaSeleccionada[1].SetActive(false);
+                canvasCasillaSeleccionada[2].SetActive(false);
+                canvasCasillaSeleccionada[3].SetActive(true);
+            }
+        }
+        else
+        {
+            if(casillaActiva == 1)
+            {
+                canvasCasillaSeleccionada[0].SetActive(true);
+                canvasCasillaSeleccionada[1].SetActive(false);
+                canvasCasillaSeleccionada[2].SetActive(false);
+                canvasCasillaSeleccionada[3].SetActive(false);
+            }
+
+            if(casillaActiva == 2)
+            {
+                canvasCasillaSeleccionada[0].SetActive(false);
+                canvasCasillaSeleccionada[1].SetActive(true);
+                canvasCasillaSeleccionada[2].SetActive(false);
+                canvasCasillaSeleccionada[3].SetActive(false);
+            }
+
+            if(casillaActiva == 3)
+            {
+                canvasCasillaSeleccionada[0].SetActive(false);
+                canvasCasillaSeleccionada[1].SetActive(false);
+                canvasCasillaSeleccionada[2].SetActive(true);
+                canvasCasillaSeleccionada[3].SetActive(false);
+            }
+
+            if(casillaActiva == 4)
+            {
+                canvasCasillaSeleccionada[0].SetActive(false);
+                canvasCasillaSeleccionada[1].SetActive(false);
+                canvasCasillaSeleccionada[2].SetActive(false);
+                canvasCasillaSeleccionada[3].SetActive(true);
+            }
+        }
+    }
 }
