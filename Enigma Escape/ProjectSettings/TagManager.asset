@@ -52,6 +52,7 @@ TagManager:
   - Pista1
   - PanelPuertaSalaMusica
   - PuertaSalidaCerrada
+  - PuertaArmario
   layers:
   - Default
   - TransparentFX
