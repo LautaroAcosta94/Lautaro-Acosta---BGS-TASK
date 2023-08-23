@@ -21,7 +21,7 @@ public class AperturaPuertas : MonoBehaviour
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hitPuertas, range))
         {
-            if (hitPuertas.transform.CompareTag("PuertaArmario"))
+            if (hitPuertas.transform.CompareTag("PuertaArmario" ))
             {
                 puertaAnim = hitPuertas.transform.GetComponent<Animator>();
                 if (Input.GetKeyDown(KeyCode.E))

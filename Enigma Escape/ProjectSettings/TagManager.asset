@@ -53,6 +53,7 @@ TagManager:
   - PanelPuertaSalaMusica
   - PuertaSalidaCerrada
   - PuertaArmario
+  - Cajon
   layers:
   - Default
   - TransparentFX
