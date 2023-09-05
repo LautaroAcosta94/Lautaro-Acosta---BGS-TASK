@@ -166,4 +166,12 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.016666668
+    functionName: SonidoCajonCerrando
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 82b941aa26f41984888d57604db0dc36,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

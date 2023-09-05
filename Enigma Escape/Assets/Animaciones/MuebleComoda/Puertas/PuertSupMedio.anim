@@ -196,4 +196,12 @@ AnimationClip:
     script: {fileID: 0}
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.016666668
+    functionName: SonidoPuertaAbriendo
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 1e50eb8016890b34682bdd5118d75ce2,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

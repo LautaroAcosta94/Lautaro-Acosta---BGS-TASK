@@ -54,6 +54,8 @@ TagManager:
   - PuertaSalidaCerrada
   - PuertaArmario
   - Cajon
+  - FloorWood
+  - FloorRug
   layers:
   - Default
   - TransparentFX

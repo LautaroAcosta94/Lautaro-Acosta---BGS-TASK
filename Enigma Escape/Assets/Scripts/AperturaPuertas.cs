@@ -1,14 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AperturaPuertas : MonoBehaviour
 {
     public Camera fpsCam;
     public float range = 8f;
-
     Animator puertaAnim;
-
 
     void Update()
     {
