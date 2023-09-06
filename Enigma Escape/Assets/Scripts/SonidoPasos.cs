@@ -1,16 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SonidoPasos : MonoBehaviour
 {
-    public float raycastDistance = 0.2f; // en el inspector es mayor, no me puse a calcular de cuáno es el rayo
-    private AudioSource audioSource;
-    public AudioClip woodFootstepSound;
-    public AudioClip rugFootstepSound;
+    public string[] suelos = new string[4];
+
+    public AudioClip[] sonidosPisadas = new AudioClip[4];
+    AudioSource audioSource;
+
+    public float raycastDistance = 0.2f; // en el inspector es mayor, no me puse a calcular de cuï¿½no es el rayo
 
     private bool isWalking = false;
     private float intervaloDePasos = 0.5f; /* Intervalo entre pasos o tiempo entre pisadas, como se quiera apresiar >.< */
     private float tiempoSiguientePaso = 0f;
-    private Vector3 lastPosition;   /*acá guardo la último posicion, teniendo en cuenta que en el start en principio es la transform del player, y después se va a ir actualizando a current cada vez que se deteca un pequeño movimiento ultima*/
+    private Vector3 lastPosition;   /*acï¿½ guardo la ï¿½ltimo posicion, teniendo en cuenta que en el start en principio es la transform del player, y despuï¿½s se va a ir actualizando a current cada vez que se deteca un pequeï¿½o movimiento ultima*/
 
     private void Start()
     {
@@ -22,7 +26,7 @@ public class SonidoPasos : MonoBehaviour
     {
         bool siAlgunaTeclaEsPresionada = Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D);
 
-        if (siAlgunaTeclaEsPresionada && Time.time >= tiempoSiguientePaso)/* en definitiva lo que hace este método es generar un intervalo de una determinada cantida de segundos entre pisada y pisada, para que no se reproduzcan múltiples sonidos*/
+        if (siAlgunaTeclaEsPresionada && Time.time >= tiempoSiguientePaso)/* en definitiva lo que hace este mï¿½todo es generar un intervalo de una determinada cantida de segundos entre pisada y pisada, para que no se reproduzcan mï¿½ltiples sonidos*/
         {
             Vector3 currentPosition = transform.position;
             float distanciaRecorrida = Vector3.Distance(currentPosition, lastPosition);
@@ -33,9 +37,9 @@ public class SonidoPasos : MonoBehaviour
             }
             lastPosition = currentPosition;
         }
-        else if (!siAlgunaTeclaEsPresionada) /* si no pongo el bool en false, me pasaba que por más que levantaba la tecla, me seguia reproduciendo sonido a veces  */
+        else if (!siAlgunaTeclaEsPresionada) /* si no pongo el bool en false, me pasaba que por mï¿½s que levantaba la tecla, me seguia reproduciendo sonido a veces  */
         {
-            isWalking = false;
+
         }
     }
 
@@ -51,13 +55,24 @@ public class SonidoPasos : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, out hit, raycastDistance))
         {
-            if (hit.collider.CompareTag("FloorWood"))
+            if (hit.collider.CompareTag(suelos[0]) && suelos[0] != null)
             {
-                Pasos(woodFootstepSound);
+                Pasos(sonidosPisadas[0]);
             }
-            else if (hit.collider.CompareTag("FloorRug"))
+
+            if (hit.collider.CompareTag(suelos[1]) && suelos[1] != null)
             {
-                Pasos(rugFootstepSound);
+                Pasos(sonidosPisadas[1]);
+            }
+
+            if (hit.collider.CompareTag(suelos[2]) && suelos[2] != null)
+            {
+                Pasos(sonidosPisadas[2]);
+            }
+
+            if (hit.collider.CompareTag(suelos[3]) && suelos[3] != null)
+            {
+                Pasos(sonidosPisadas[3]);
             }
         }
     }
