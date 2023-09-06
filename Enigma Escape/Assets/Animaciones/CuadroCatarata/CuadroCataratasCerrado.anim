@@ -196,4 +196,12 @@ AnimationClip:
     script: {fileID: 0}
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.083333336
+    functionName: SonidoCuadrCerrando
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: 6bd149dbe15ea5d4588f4606c92eba72,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

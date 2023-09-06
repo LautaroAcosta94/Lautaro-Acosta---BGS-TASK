@@ -200,7 +200,7 @@ AnimationClip:
   - time: 0.016666668
     functionName: SonidoPuertaAbriendo
     data: 
-    objectReferenceParameter: {fileID: 8300000, guid: 1e50eb8016890b34682bdd5118d75ce2,
+    objectReferenceParameter: {fileID: 8300000, guid: 1b9596c6c4784244e9d6045bb9fd261b,
       type: 3}
     floatParameter: 0
     intParameter: 0

@@ -200,7 +200,7 @@ AnimationClip:
   - time: 0.016666668
     functionName: SonidPuertaCerrando
     data: 
-    objectReferenceParameter: {fileID: 8300000, guid: c827d23ca845b0e4e9c0682c29d455dd,
+    objectReferenceParameter: {fileID: 8300000, guid: 400f282b668da724caf2c7ea0d872e16,
       type: 3}
     floatParameter: 0
     intParameter: 0
