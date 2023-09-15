@@ -9,7 +9,11 @@ public class RaycastController : MonoBehaviour
     public Camera fpsCam;
     void Update()
     {
+        CallInteractable();
+    }
 
+    private void CallInteractable()
+    {
         RaycastHit hit;
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, raycastDistance))

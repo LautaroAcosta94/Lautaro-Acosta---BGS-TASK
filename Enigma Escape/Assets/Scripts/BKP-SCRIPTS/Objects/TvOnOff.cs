@@ -19,8 +19,6 @@ public class TvOnOff : MonoBehaviour, IInteractable
         //textoInteractuar.SetActive(true);
         if (Input.GetKeyDown(KeyCode.E))
         {
-
-            Debug.Log("INTENTASTE ACTIVAR LA TV");
             if (!encender)
             {
                 musicaAmbiente.volume = 0.1f;
