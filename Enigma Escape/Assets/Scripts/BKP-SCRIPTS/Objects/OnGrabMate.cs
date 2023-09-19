@@ -13,11 +13,8 @@ public class OnGrabMate : OnGrab,IInteractable
     public new void Interact(RaycastHit hit)
     {
         _toolBeltV2.ItemCollector(hit);
-        Debu();
+        //TODO implementar funcion de Placa de presion Mate
     }
 
-    private void Debu()
-    {
-        Debug.Log("funciona el GRAB");
-    }
+
 }

@@ -15,11 +15,9 @@ public class RaycastController : MonoBehaviour
     private void CallInteractable()
     {
         RaycastHit hit;
-
-        
+    
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, raycastDistance))
-        {
-            
+        {       
             GameObject hitObject = hit.collider.gameObject;
 
             // Check if the hit object implements the IInteractable interface
