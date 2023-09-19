@@ -13,7 +13,7 @@ public class TvOnOff : MonoBehaviour, IInteractable
     public AudioSource TV_OFF;
     public AudioSource musicaAmbiente;
 
-    public void Interact()
+    public void Interact(RaycastHit hit)
     {
 
         //textoInteractuar.SetActive(true);
