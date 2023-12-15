@@ -29,18 +29,8 @@ public class PaintsActivation : MonoBehaviour, IInteractable
         Transform bordLed = pic.GetChild(1);
         Transform placaLed = pic.GetChild(3);
         if(Input.GetKeyDown(KeyCode.E))
-        {
-
-            StartCoroutine(EncenderYApagarAnimacionBoton(this.gameObject.GetComponent<Animator>()));
-            Color switchingColorRGB = colorCyclePaints.NextColor(bordLed.GetComponent<Renderer>().material.color);
-            bordLed.GetComponent<Renderer>().material.color = switchingColorRGB;
-            bordLed.GetComponent<Renderer>().material.SetColor("_EmissionColor", switchingColorRGB);
-
-            placaLed.GetComponent<Renderer>().material.color = switchingColorRGB;
-            placaLed.GetComponent<Renderer>().material.SetColor("_EmissionColor", switchingColorRGB);
-            string switchingColorHex = switchingColorRGB.ToHexString();
-            isColorCorrect = (this.CorrectColor == switchingColorHex) ? true : false;
-            Debug.Log($"the color {switchingColorHex} is {isColorCorrect} the correct color is {this.CorrectColor}");
+        {   
+                StartCoroutine(OnOffButtonAnimation(this.gameObject.GetComponent<Animator>(),bordLed,placaLed));
         }
     }
 
@@ -56,9 +46,9 @@ public class PaintsActivation : MonoBehaviour, IInteractable
     // Update is called once per frame
     void Update()
     {
-        PuzzleCuadros();
+        PuzzleValidation();
     }
-    void PuzzleCuadros()
+    void PuzzleValidation()
     {
         var paints = Object.FindObjectsOfType<PaintsActivation>();
         if(paints.All(x => x.isColorCorrect))
@@ -67,7 +57,7 @@ public class PaintsActivation : MonoBehaviour, IInteractable
             VintageBaulController.Open();
         }
     }
-    private IEnumerator EncenderYApagarAnimacionBoton(Animator buttonHit)
+    private IEnumerator OnOffButtonAnimation(Animator buttonHit, Transform bordLed, Transform placaLed)
     {
         Debug.Log("Enciende Courrutine");
         buttonHit.SetBool("Press", true); // PRIMERO ACTIVA LA ANIMACION
@@ -75,8 +65,22 @@ public class PaintsActivation : MonoBehaviour, IInteractable
         {
             Debug.Log("Ingresa al while");
             yield return new WaitForSeconds(tiempoApagado); //ESPERA UNOS SEGUNDOS Y LUEGO EJECUTA LA LINEA DE ABAJO
+            ChangeColor(bordLed, placaLed);
             buttonHit.SetBool("Press", false); // LUEGO LA DESACTIVA
         }
         yield break; //FINALIZA LA COURRUTINE
+    }
+
+    private void ChangeColor(Transform bordLed, Transform placaLed)
+    {
+        Color switchingColorRGB = colorCyclePaints.NextColor(bordLed.GetComponent<Renderer>().material.color);
+        bordLed.GetComponent<Renderer>().material.color = switchingColorRGB;
+        bordLed.GetComponent<Renderer>().material.SetColor("_EmissionColor", switchingColorRGB);
+
+        placaLed.GetComponent<Renderer>().material.color = switchingColorRGB;
+        placaLed.GetComponent<Renderer>().material.SetColor("_EmissionColor", switchingColorRGB);
+        string switchingColorHex = switchingColorRGB.ToHexString();
+        isColorCorrect = (this.CorrectColor == switchingColorHex) ? true : false;
+        Debug.Log($"the color {switchingColorHex} is {isColorCorrect} the correct color is {this.CorrectColor}");
     }
 }
