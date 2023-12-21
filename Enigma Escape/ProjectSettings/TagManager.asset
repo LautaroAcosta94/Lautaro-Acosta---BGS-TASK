@@ -52,6 +52,10 @@ TagManager:
   - Pista1
   - PanelPuertaSalaMusica
   - PuertaSalidaCerrada
+  - PuertaArmario
+  - Cajon
+  - FloorWood
+  - FloorRug
   layers:
   - Default
   - TransparentFX

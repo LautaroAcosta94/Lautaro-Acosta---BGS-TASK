@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.00000003814696, y: -1.5631956e-15, z: 0.00000011444091}
+        value: {x: -0.025624625, y: -0.23415923, z: 0.69904697}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -29,7 +29,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.33333334
-        value: {x: 0, y: -0.299, z: -0}
+        value: {x: -0.0256, y: -0.55, z: 0.699}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -84,7 +84,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.00000003814696
+        value: -0.025624625
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -93,7 +93,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 0
+        value: -0.0256
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -112,7 +112,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -1.5631956e-15
+        value: -0.23415923
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -121,7 +121,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: -0.299
+        value: -0.55
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -140,7 +140,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.00000011444091
+        value: 0.69904697
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -149,7 +149,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: -0
+        value: 0.699
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -166,4 +166,12 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.016666668
+    functionName: SonidoCajonAbriendo
+    data: 
+    objectReferenceParameter: {fileID: 8300000, guid: e0a5861e957dc104ea1576ee87231a65,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
