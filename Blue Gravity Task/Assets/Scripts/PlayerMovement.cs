@@ -19,6 +19,9 @@ public class PlayerMovement : MonoBehaviour
     // Referencia al componente Animator del personaje
     public Animator animator;
 
+    // Referencia al componente AudioSource para los pasos
+    public AudioSource steps;
+
     void Start()
     {
         // Obtén el componente Rigidbody2D del objeto al que está adjunto este script
@@ -53,10 +56,22 @@ public class PlayerMovement : MonoBehaviour
         if (movement != Vector2.zero)
         {
             animator.SetFloat("Movement", 0.5f);
+
+            // Reproduce el sonido de pasos si no está sonando
+            if (!steps.isPlaying)
+            {
+                steps.Play();
+            }
         }
         else
         {
             animator.SetFloat("Movement", 0f);
+
+            // Detiene el sonido de pasos si está sonando
+            if (steps.isPlaying)
+            {
+                steps.Stop();
+            }
         }
     }
 
@@ -66,3 +81,4 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
+
