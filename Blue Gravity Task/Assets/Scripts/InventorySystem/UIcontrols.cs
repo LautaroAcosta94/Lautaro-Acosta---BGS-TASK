@@ -11,7 +11,10 @@ public class UIcontrols : MonoBehaviour
 
     bool inventoryOpen = false;
     public bool nextToTheMarket = false;
-    
+
+    // Referencias a los componentes AudioSource para abrir y cerrar el inventario o el mercado
+    public AudioSource openBag;
+    public AudioSource closeBag;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +32,14 @@ public class UIcontrols : MonoBehaviour
                 inventory.SetActive(true);
                 inventoryOpen = true;
                 GetComponent<PlayerMovement>().enabled = false; // Desactiva el movimiento del jugador
+                openBag.Play(); // Reproduce el sonido de abrir
             }
             else if (inventoryOpen == true && Input.GetKeyDown(KeyCode.E))
             {
                 inventory.SetActive(false);
                 inventoryOpen = false;
                 GetComponent<PlayerMovement>().enabled = true;
+                closeBag.Play(); // Reproduce el sonido de cerrar
             }
         }
         else
@@ -51,7 +56,8 @@ public class UIcontrols : MonoBehaviour
             market.SetActive(true);
             inventory.SetActive(true);
             inventoryOpen = true;
-            GetComponent<PlayerMovement>().enabled = false; // Desactiva el movimiento del jugador         
+            GetComponent<PlayerMovement>().enabled = false; // Desactiva el movimiento del jugador
+            openBag.Play(); // Reproduce el sonido de abrir
         }
         else if (inventoryOpen == true && Input.GetKeyDown(KeyCode.E))
         {
@@ -60,6 +66,7 @@ public class UIcontrols : MonoBehaviour
             inventory.SetActive(false);
             inventoryOpen = false;
             GetComponent<PlayerMovement>().enabled = true;
+            closeBag.Play(); // Reproduce el sonido de cerrar
         }
     }
 
