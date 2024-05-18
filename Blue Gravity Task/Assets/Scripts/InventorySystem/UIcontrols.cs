@@ -6,11 +6,16 @@ public class UIcontrols : MonoBehaviour
 {
     public GameObject inventory;
     public GameObject market;
+    public GameObject Message;
 
     public GameObject TextIntectIndicator;
+    public GameObject TextIntectIndicatorTwo;
 
     bool inventoryOpen = false;
-    public bool nextToTheMarket = false;
+    bool nextToTheMarket = false;
+    bool nextToTheMarketClosed = false;
+    bool nextToSomeBuilding = false;
+    bool MessageOpen = false;
 
     // Referencias a los componentes AudioSource para abrir y cerrar el inventario o el mercado
     public AudioSource openBag;
@@ -25,7 +30,7 @@ public class UIcontrols : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (nextToTheMarket == false)
+        if (nextToSomeBuilding == false)
         {
             if (inventoryOpen == false && Input.GetKeyDown(KeyCode.E))
             {
@@ -44,29 +49,58 @@ public class UIcontrols : MonoBehaviour
         }
         else
         {
-            OpenMarketMenu();
+            MenuAndTextSystem();
         }
     }
 
-    void OpenMarketMenu()
+    void MenuAndTextSystem()
+    {
+        if (nextToTheMarket == true)
+        {
+            if (inventoryOpen == false && Input.GetKeyDown(KeyCode.E))
+            {
+                market.SetActive(true);
+                inventory.SetActive(true);
+                inventoryOpen = true;
+                GetComponent<PlayerMovement>().enabled = false; // Desactiva el movimiento del jugador
+                openBag.Play(); // Reproduce el sonido de abrir
+            }
+            else if (inventoryOpen == true && Input.GetKeyDown(KeyCode.E))
+            {
+                market.SetActive(false);
+                inventory.SetActive(false);
+                inventoryOpen = false;
+                GetComponent<PlayerMovement>().enabled = true;
+                closeBag.Play(); // Reproduce el sonido de cerrar
+            }
+        }
+
+        if(nextToTheMarketClosed == true)
+        {
+            if (MessageOpen == false && Input.GetKeyDown(KeyCode.E))
+            {
+                Message.SetActive(true);
+                MessageOpen = true;
+            }
+            else if (MessageOpen == true && Input.GetKeyDown(KeyCode.E))
+            {
+                Message.SetActive(false);
+                MessageOpen = false;
+            }
+        }
+    }
+
+    void OpenTextMessage()
     {
         if (inventoryOpen == false && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Abriste el menu del mercado");
-            market.SetActive(true);
-            inventory.SetActive(true);
-            inventoryOpen = true;
-            GetComponent<PlayerMovement>().enabled = false; // Desactiva el movimiento del jugador
-            openBag.Play(); // Reproduce el sonido de abrir
+          
         }
         else if (inventoryOpen == true && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Cerraste el menu del mercado");
-            market.SetActive(false);
-            inventory.SetActive(false);
-            inventoryOpen = false;
-            GetComponent<PlayerMovement>().enabled = true;
-            closeBag.Play(); // Reproduce el sonido de cerrar
+            
         }
     }
 
@@ -76,6 +110,14 @@ public class UIcontrols : MonoBehaviour
         {
             TextIntectIndicator.SetActive(true);
             nextToTheMarket = true;
+            nextToSomeBuilding = true;
+        }
+
+        if (other.CompareTag("ClosedMarket"))
+        {
+            TextIntectIndicatorTwo.SetActive(true);
+            nextToTheMarketClosed = true;
+            nextToSomeBuilding = true;
         }
     }
 
@@ -85,6 +127,14 @@ public class UIcontrols : MonoBehaviour
         {
             TextIntectIndicator.SetActive(false);
             nextToTheMarket = false;
+            nextToSomeBuilding = false;
+        }
+
+        if (other.CompareTag("ClosedMarket"))
+        {
+            TextIntectIndicatorTwo.SetActive(false);
+            nextToTheMarketClosed = false;
+            nextToSomeBuilding = false;
         }
     }
 }

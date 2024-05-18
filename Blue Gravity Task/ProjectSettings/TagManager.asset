@@ -36,6 +36,7 @@ TagManager:
   - Market
   - MarketSlot
   - ItemMarket
+  - ClosedMarket
   layers:
   - Default
   - TransparentFX
