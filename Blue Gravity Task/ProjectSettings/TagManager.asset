@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Players
+  - Item
+  - Slot
+  - SlotArmor
+  - SlotHood
+  - SlotBoots
+  - SlotGloves
+  - Torso
+  - Pelvis
+  - ShoulderRight
+  - ShoulderLeft
+  - ElbowRight
+  - ElbowLeft
+  - Hood
+  - RightBoot
+  - LeftBoot
+  - RightGlove
+  - LeftGlove
+  - InventoryTorso
+  - InventoryPelvis
+  - InventoryShoulderRight
+  - InventoryShoulderLeft
+  - InventoryElbowRight
+  - InventoryElbowLeft
+  - InventoryHood
+  - InventoryRightBoot
+  - InventoryLeftBoot
+  - InventoryRightGlove
+  - InventoryLeftGlove
+  - Market
+  - MarketSlot
+  - ItemMarket
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

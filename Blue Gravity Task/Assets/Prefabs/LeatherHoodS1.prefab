@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6707566810611377954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 17308167219363380}
+  - component: {fileID: 6605343930982174959}
+  - component: {fileID: 7692787436308559128}
+  - component: {fileID: 4994036731100364636}
+  - component: {fileID: 1169450070447156544}
+  m_Layer: 5
+  m_Name: LeatherHoodS1
+  m_TagString: Item
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &17308167219363380
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707566810611377954}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6605343930982174959
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707566810611377954}
+  m_CullTransparentMesh: 1
+--- !u!114 &7692787436308559128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707566810611377954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f7ba6686008582f49b3c2b75e6796389, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4994036731100364636
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707566810611377954}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1169450070447156544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6707566810611377954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259288b608ace894b9e4806a5ebf7b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 1
+  specificItemType: 5
+  Torso: {fileID: 0}
+  Pelvis: {fileID: 0}
+  ShoulderRight: {fileID: 0}
+  ShoulderLeft: {fileID: 0}
+  ElbowRight: {fileID: 0}
+  ElbowLeft: {fileID: 0}
+  Hood: {fileID: 0}
+  RightBoot: {fileID: 0}
+  LeftBoot: {fileID: 0}
+  RightGlove: {fileID: 0}
+  LeftGlove: {fileID: 0}
+  NormalTorso: {fileID: 21300000, guid: c9f3370bd67742b498ed87b4caf62bae, type: 3}
+  NormalPelvis: {fileID: 21300000, guid: cb9533fee39d0b4469cbe5d3c5f2aab1, type: 3}
+  NormalShoulderRight: {fileID: 21300000, guid: 3b18e43108e37cf4795cb795bf189dd2, type: 3}
+  NormalShoulderLeft: {fileID: 21300000, guid: 5b57d97d2fd393f43a9b6cb438be7b4e, type: 3}
+  NormalElbowRight: {fileID: 21300000, guid: 4756a493f39959f42828cd53f5d1ff28, type: 3}
+  NormalElbowLeft: {fileID: 21300000, guid: 986ab8f7f8d53934eafd8fb8aac7a37c, type: 3}
+  NormalHood: {fileID: 21300000, guid: 04f6c40e52535b941b42e11550f9cb8c, type: 3}
+  NormalRightBoot: {fileID: 21300000, guid: d4a68b40fbf8e4046a2350c31a210fb1, type: 3}
+  NormalLeftBoot: {fileID: 21300000, guid: 2932647fff9189e40a62a25143f3f534, type: 3}
+  NormalRightGlove: {fileID: 21300000, guid: 89374d9f62bd1994199194ecf8e01b82, type: 3}
+  NormalLeftGlove: {fileID: 21300000, guid: d8885500a45c82d4ba98beaef46934f5, type: 3}
+  CrimsonTorso: {fileID: 21300000, guid: 9d6d1f49428fa374a92f41215509fa2b, type: 3}
+  CrimsonPelvis: {fileID: 21300000, guid: 407610fda1931d04e904e05e978f8631, type: 3}
+  CrimsonShoulderRight: {fileID: 21300000, guid: 827ba5a8e65d00d4f8b4b6065a6ac00e, type: 3}
+  CrimsonShoulderLeft: {fileID: 21300000, guid: 2f6da83ce6dd1c746aa93c534d1c4e18, type: 3}
+  CrimsonElbowRight: {fileID: 21300000, guid: 77300585918463d47b678795245a2c13, type: 3}
+  CrimsonElbowLeft: {fileID: 21300000, guid: b9397e4ed085e2f4c9dda3b695198180, type: 3}
+  CrimsonHood: {fileID: 21300000, guid: ef65ae5dbe4851a41b9c6996ab48884e, type: 3}
+  CrimsonRightBoot: {fileID: 21300000, guid: a387d679d2786f14c91453b33b9d383c, type: 3}
+  CrimsonLeftBoot: {fileID: 21300000, guid: b5c91a333df38be4ab446fa54912cdfe, type: 3}
+  CrimsonRightGlove: {fileID: 21300000, guid: 0cfe7afcdec21d64295f9d8c8bd49882, type: 3}
+  CrimsonLeftGlove: {fileID: 21300000, guid: f2f8e7b290057d9409d3330a1773182b, type: 3}
+  LeatherTorso: {fileID: 21300000, guid: 9bba1c4de8f712145a0bb926dbf0ae7e, type: 3}
+  LeatherPelvis: {fileID: 21300000, guid: ea69085ff01280b46a86db117d82db78, type: 3}
+  LeatherShoulderRight: {fileID: 21300000, guid: f6aab6cba705c1e448de87213fa3381e, type: 3}
+  LeatherShoulderLeft: {fileID: 21300000, guid: c4db789c4dafe0f498893066dd1db2a4, type: 3}
+  LeatherElbowRight: {fileID: 21300000, guid: fcb607e3db761de409a550e27399e6b3, type: 3}
+  LeatherElbowLeft: {fileID: 21300000, guid: 5bc8ec2f73cbcba4a8e8cd13a839f26b, type: 3}
+  LeatherHood: {fileID: 21300000, guid: 913a4716a4435444d87f6eaa23816b89, type: 3}
+  LeatherRightBoot: {fileID: 21300000, guid: 3ca3c61ba4c1f9e408bc15090e62a2d0, type: 3}
+  LeatherLeftBoot: {fileID: 21300000, guid: 00c3cd97c8e29c644961f787155cdccd, type: 3}
+  LeatherRightGlove: {fileID: 21300000, guid: 3a05dd33a554e7340b7ab9c686ad1346, type: 3}
+  LeatherLeftGlove: {fileID: 21300000, guid: 17608e3863f6ceb48939c098fa803bfa, type: 3}
