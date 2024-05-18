@@ -6,6 +6,9 @@ public class UIcontrols : MonoBehaviour
 {
     public GameObject inventory;
     public GameObject market;
+
+    public GameObject TextIntectIndicator;
+
     bool inventoryOpen = false;
     public bool nextToTheMarket = false;
     
@@ -64,6 +67,7 @@ public class UIcontrols : MonoBehaviour
     {
         if (other.CompareTag("Market"))
         {
+            TextIntectIndicator.SetActive(true);
             nextToTheMarket = true;
         }
     }
@@ -72,6 +76,7 @@ public class UIcontrols : MonoBehaviour
     {
         if (other.CompareTag("Market"))
         {
+            TextIntectIndicator.SetActive(false);
             nextToTheMarket = false;
         }
     }
